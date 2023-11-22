@@ -1,36 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Media Queries</title>
-    <link rel="stylesheet" href="tarea_flex_query.css" />
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,500&display=swap"
-      rel="stylesheet"
-    /> -->
-  </head>
+body {
+  font-family: "Open Sans", sans-serif;
+}
 
-  <body>
-    <nav>
-      <a href="#Home">Inicio</a>
-      <ul>
-        <li>
-          <a href="#Products">Productos y servicios</a>
-        </li>
-        <li>
-          <a href="#About">Acerca de</a>
-        </li>
-        <li>
-          <a href="#Contact">Contacto</a>
-        </li>
-      </ul>
-      <a href="#login">Ingresar</a>
-    </nav>
-    <h1>Media Queries</h1>
-  </body>
-</html>
+nav {
+  font-size: 1.5rem;
+  /* Flex espacikado tomando todo el espacio (primer objeto al inicio, último al final) */
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 6rem;
+  text-align: center;
+}
+
+ul,
+li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  /* Flex espaciado distribuido (centrado) con capacidad de crecimiento, ancho max de 90% */
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  max-width: 90%;
+}
+
+/* ancho entre 150 y 699 pixeles */
+@media (min-width: 150px) and (max-width: 699px) {
+  h1 {
+    color: blue;
+  }
+}
+
+/* altura máxima de 800 pixeles */
+@media (max-height: 800px) {
+  a {
+    color: black;
+    font-size: 1rem;
+  }
+  h1 {
+    color: cyan;
+  }
+  a:hover {
+    font-size: 3rem;
+    color: cyan;
+  }
+}
+
+/* ancho mínimo de 700 pixeles */
+@media (min-width: 700px) {
+  h1 {
+    color: orange;
+  }
+}
+
+/* ancho mínimo de 1000 pixeles*/
+@media (min-width: 1000px) {
+  h1 {
+    color: yellow;
+  }
+}
+
+/* cuando tenga orientación horizontal*/
+@media (orientation: landscape) {
+  body {
+    background-color: grey;
+  }
+}
+
+/* ancho mínimo de 1500 pixeles*/
+@media (min-width: 1500px) {
+  h1 {
+    color: green;
+  }
+  /* Agregar un fondo que cubra y se repita de una imagen web */
+  body {
+    background-image: url(https://images.unsplash.com/photo-1695112178219-7c5765c5b155?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80);
+    background-size: cover;
+    background-repeat: repeat;
+  }
+}
+
+/* ancho máximo de 750 pixeles*/
+@media (max-width: 700px) {
+  h1 {
+    font-size: 4rem;
+  }
+  /* Cambiar los flex del nav y la ul del nav en columna alineada al centro */
+  nav,
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ancho máximo de 550 pixeles*/
+@media (max-width: 550px) {
+  body {
+    font-size: 3em;
+    /* Agregar la fuente roboto y usarla como primera opción */
+    font-family: "Roboto", sans-serif;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+}
