@@ -86,7 +86,7 @@ ul {
 }
 
 /* ancho máximo de 750 pixeles*/
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   h1 {
     font-size: 4rem;
   }
